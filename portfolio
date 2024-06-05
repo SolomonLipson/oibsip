@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2b2b2b;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em 2em;
+            background-color: #1e1e1e;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1em;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f39c12;
+        }
+
+        #intro {
+            text-align: center;
+            padding: 5em 2em;
+            position: relative;
+            background-size: cover;
+
+        }
+
+        #intro h1 {
+    font-size: 3em;
+    color: rgb(255, 255, 255);
+    font-weight: bold; /* Make the text bold */
+    margin: 0.5em 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    text-shadow: 
+        2px 2px 4px rgba(183, 146, 146, 0.5),  /* Top-left shadow */
+        -2px -2px 4px rgba(0, 0, 0, 0.5), /* Bottom-right shadow */
+        2px -2px 4px rgba(7, 221, 228, 0.5),  /* Top-right shadow */
+        -2px 2px 4px rgba(216, 157, 221, 0.5);  /* Bottom-left shadow */
+}
+
+
+        #intro p {
+            font-size: 1.2em;
+            animation: fadeIn 2s ease-in-out forwards 1s;
+        }
+
+        #intro button {
+            padding: 0.5em 1em;
+            font-size: 1em;
+            background-color: #f39c12;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            animation: fadeIn 2s ease-in-out forwards 2s;
+        }
+
+        #intro button:hover {
+            background-color: #e67e22;
+        }
+
+        section {
+            padding: 3em 2em;
+            text-align: center;
+        }
+
+        .service {
+            margin: 1em 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        .service:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .service:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #1e1e1e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <nav>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#works">Experience</a></li>
+                <li><a href="#blog">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="intro">
+        <h1>CHILUMULA SOLOMON</h1>
+        <p>Software Engineer - Web Developer</p>
+        <button>My Story</button>
+    </section>
+    
+    <section id="services">
+        <h2>Services</h2>
+        <div class="service">
+            <h3>Served at OctaNet Services Pvt.Ltd for Web-Developer role</h3>
+            <h3>Full Stack Development Using Mern Stack</h3>
+        </div>
+        
+        <div class="service">
+            <h3>Full Stack Developer</h3>
+            <p>Instagram Clone</p>
+            <p>Pizza delivery app</p>
+        </div>
+    </section>
+    
+    <section id="works">
+        <h2>Expert IN</h2>
+        Image Processing<br/>
+        OpenCV-python<br/>
+        Problem Solving<br/>
+        MYSQL-MONGO DB<br/>
+        Web-Applications
+
+
+    </section>
+    
+    <section id="blog">
+        <h2>Projects</h2>
+        Spotify's Songs Genre Grouping<br/>
+        Google Translator<br/>
+        Automated Attendence System Using OpenCV-python
+        <br/>
+        Instagram Bot - python
+        <br/>
+        Typing Speed Test Game - python
+        <br/>
+        Sending Unlimited Mails  - python<br/>
+        QR - Code Generator<br/>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 All Rights Reserved</p>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const services = document.querySelectorAll('.service');
+            
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            });
+            
+            services.forEach(service => {
+                observer.observe(service);
+            });
+        });
+    </script>
+</body>
+</html>
